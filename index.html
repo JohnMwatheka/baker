@@ -4,526 +4,608 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roasted and Toasted Lakeside Coffee Bar</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <!-- Bootstrap CSS (Include in <head>) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <title>Roasted and Toasted Lakeside Coffee Bar | Burlington, VT</title>
   <!-- Primary Meta Tags -->
-<title>Roasted and Toasted Lakeside Coffee Bar</title>
-<meta name="title" content="Roasted and Toasted Lakeside Coffee Bar" />
-<meta name="description" content="Roasted & Toasted is a lakeside coffee bar in Burlington, VT, serving freshly brewed coffee, specialty drinks, pastries, and breakfast options. Since 1999, we’ve been a community favorite for cozy vibes and great food. Visit us or order ahead today!" />
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://baker-nine.vercel.app/" />
-<meta property="og:title" content="Roasted and Toasted Lakeside Coffee Bar" />
-<meta property="og:description" content="Roasted & Toasted is a lakeside coffee bar in Burlington, VT, serving freshly brewed coffee, specialty drinks, pastries, and breakfast options. Since 1999, we’ve been a community favorite for cozy vibes and great food. Visit us or order ahead today!" />
-<meta property="og:image" content="https://baker-nine.vercel.app/logo.png" />
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://baker-nine.vercel.app/" />
-<meta property="twitter:title" content="Roasted and Toasted Lakeside Coffee Bar" />
-<meta property="twitter:description" content="Roasted & Toasted is a lakeside coffee bar in Burlington, VT, serving freshly brewed coffee, specialty drinks, pastries, and breakfast options. Since 1999, we’ve been a community favorite for cozy vibes and great food. Visit us or order ahead today!" />
-<meta property="twitter:image" content="https://baker-nine.vercel.app/logo.png" />
-
-<!-- Meta Tags Generated with https://metatags.io -->
-
+  <meta name="description" content="Lakeside coffee bar in Burlington, VT serving specialty coffee, pastries and breakfast since 1999. Order ahead online!" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Roasted and Toasted Lakeside Coffee Bar" />
+  <meta property="og:description" content="Vermont's favorite lakeside coffee shop since 1999. Specialty coffee, fresh pastries and breakfast sandwiches." />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
   <style>
-   
-
-    .featured-item img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .menu-card img {
-      height: 150px;
-      object-fit: cover;
-    }
     :root {
       --dark-brown: #4B2E2B;
       --accent-gold: #C5A46D;
       --cream: #F4EFEA;
+      --text-dark: #333333;
+      --text-light: #F8F9FA;
     }
   
     body {
       font-family: 'Open Sans', sans-serif;
       background-color: var(--cream);
-      color: #333;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    
+    /* Accessibility Improvements */
+    a:focus, button:focus {
+      outline: 3px solid var(--accent-gold);
+      outline-offset: 2px;
+    }
+    
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      z-index: 999;
+      padding: 1rem;
+      background-color: var(--dark-brown);
+      color: white;
+    }
+    .skip-link:focus {
+      left: 10px;
+      top: 10px;
     }
   
+    /* Navbar */
     .navbar {
       background-color: var(--dark-brown);
     }
   
-    .navbar .nav-link, .navbar .navbar-brand, .navbar-text {
-      color: #fff !important;
+    .navbar-brand img {
+      width: 180px;
+      height: auto;
     }
-  
-    .navbar .nav-link:hover {
+    
+    .nav-link {
+      color: var(--text-light) !important;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+    }
+    
+    .nav-link:hover, .nav-link:focus {
       color: var(--accent-gold) !important;
     }
-  
+    
+    /* Hero Section */
     .hero {
-      background: url('/path-to-hero-image.jpg') center/cover no-repeat;
-      color: #fff;
-      padding: 100px 20px;
-      text-align: center;
-      background-color: var(--dark-brown); /* fallback */
+      background: linear-gradient(rgba(75, 46, 43, 0.8), rgba(75, 46, 43, 0.8)), 
+                  url('hero.jpg') center/cover no-repeat;
+      min-height: 90vh;
     }
-  
+    
     .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 3.5rem);
     }
-  
-    .hero h2 {
-      font-size: 2rem;
-      font-weight: 300;
-      margin-top: 10px;
-    }
-  
+    
     .hero p {
-      font-size: 1.25rem;
-      margin: 20px 0;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
-  
+    
+    /* Buttons */
     .btn-gold {
       background-color: var(--accent-gold);
-      border: none;
-      color: #4B2E2B;
-      font-weight: 600;
+      color: var(--dark-brown);
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.25rem;
     }
-  
+    
     .btn-gold:hover {
       background-color: #b28f5a;
+      color: var(--dark-brown);
     }
-  
-      .featured-img {
-        height: 250px;
-        object-fit: cover;
+    
+    /* Cards */
+    .card {
+      border: none;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    /* Menu Sections */
+    .menu-section {
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+    
+    /* Contact Form */
+    .contact-form .form-control {
+      padding: 0.75rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-brown);
+      color: var(--text-light);
+    }
+    
+    .footer-links a {
+      color: var(--accent-gold);
+      text-decoration: none;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .navbar-brand img {
+        width: 140px;
       }
+      
+      .hero {
+        min-height: 70vh;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+      
+      .card-img-top {
+        height: 150px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Skip to Content Link (Accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container-fluid">
-    <a class="navbar-brand bg-white rounded" href="#">
-      <img src="logo.png" alt="Roasted & Toasted Logo" width="200"  class="rounded-circle"/>
-    </a>    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-        <li class="nav-item"><a class="nav-link" href="#order">Order Ahead</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
-      </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand bg-white" href="#">
+        <img src="logo.png" alt="Roasted & Toasted Coffee Bar Logo" class="rounded-circle">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#menu">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#order">Order Ahead</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-
-
-
+  </nav>
 
   <!-- Hero Section -->
-<!-- Hero Section -->
-<section class="hero text-white d-flex align-items-center" id="home" style="background: url('hero.jpg') center/cover no-repeat; min-height: 90vh;">
-  <div class="container text-center">
-    <h1 class="display-4 fw-bold">Roasted and Toasted coffee</h1>
-    <h2 class="lead">Lakeside Coffee Bar in Burlington, VT</h2>
-    <p class="mt-3 mb-4 text-justify">How you start your day is important. Why not start it with us? Roasted and Toasted Lakeside Coffee Bar is not your typical coffee shop. We create specialty, high-quality coffee blends for true coffee lovers. Since our founding in 1999, we've been committed to creating a relaxing experience to keep customers coming back. Whether it's our collection of hand-crafted pastries or our curated roasted beverages, we have what you need to start your morning, afternoon, or evening the "roasted and toasted" way.<br />
-
-      Don't forget to ask our barista for the seasonal specials!
+  <section class="hero d-flex align-items-center text-white text-center" id="home" aria-labelledby="hero-heading">
+    <div class="container">
+      <h1 id="hero-heading" class="display-4 fw-bold mb-3">Roasted & Toasted Coffee</h1>
+      <h2 class="h3 mb-4">Lakeside Coffee Bar in Burlington, VT</h2>
+      <p class="mb-5">
+        How you start your day is important. Since 1999, we've been committed to creating specialty, high-quality coffee 
+        blends and hand-crafted pastries in a relaxing lakeside environment. Ask about our seasonal specials!
       </p>
-    <a href="#menu" class="btn btn-warning text-dark me-2">View Menu</a>
-    <a href="#order" class="btn btn-outline-light">Order Ahead</a>
-  </div>
-</section>
-
-<!-- Featured Menu -->
-<section class="container text-center my-5" id="featured">
-  <h3 class="mb-4" style="color: #6B4D2F;">Featured Items</h3>
-  <div class="row">
-    <div class="col-md-4 mt-2">
-      <div class="card border-0 shadow-sm">
-        <img src="coffee1.jpg" class="card-img-top featured-img" alt="Classic Latte">
-        <div class="card-body">
-          <h5 class="card-title">Classic Latte</h5>
-          <p class="card-text">Rich espresso blended with steamed milk and velvety foam.</p>
-        </div>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#menu" class="btn btn-gold btn-lg">View Menu</a>
+        <a href="#order" class="btn btn-outline-light btn-lg">Order Ahead</a>
       </div>
     </div>
-    <div class="col-md-4 mt-2">
-      <div class="card border-0 shadow-sm">
-        <img src="coffee2.jpg" class="card-img-top featured-img" alt="Fresh Croissant">
-        <div class="card-body">
-          <h5 class="card-title">Fresh Croissant</h5>
-          <p class="card-text">Flaky, buttery croissant baked fresh every morning.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mt-2">
-      <div class="card border-0 shadow-sm">
-        <img src="coffee3.jpg" class="card-img-top featured-img" alt="Breakfast Sandwich">
-        <div class="card-body">
-          <h5 class="card-title">Breakfast Sandwich</h5>
-          <p class="card-text">Egg, cheese, and your choice of meat on a toasted bun.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="mt-4">
-    <a href="#menu" class="btn btn-warning text-dark me-2">View Menu</a>
-    <a href="#order" class="btn btn-dark">Order Ahead</a>
-  </div>
-</section>
-
-
-
-
-  <!-- About Section -->
-<!-- About Section -->
-<section class="container my-5" id="about">
-  <div class="row align-items-center">
-    <!-- Text Column -->
-    <div class="col-lg-6 mb-4 mb-lg-0">
-      <h3 class="mb-3" style="color: #6B4D2F;">Our Story</h3>
-      <p style="font-size: 1.1rem; line-height: 1.8;">
-        <strong>Roasted and Toasted Lakeside Coffee Bar </strong> is a locally owned coffee shop by a beautiful lakeside in Burlington, Vermont. We offer a range of signature coffee-based beverages and hand-crafted pastries and breakfast sandwiches. Since our humble beginnings in 1999, our goal has been to create a relaxing, refreshing environment for those who love coffee like we do!.
-      </p>
-    </div>
-
-    <!-- Uniform Images Column -->
-    <div class="col-lg-6 d-flex flex-wrap gap-3 justify-content-center">
-      <div class="rounded shadow-sm overflow-hidden" style="width: 30%;">
-        <img src="interior1.jpg" class="img-fluid " alt="Interior View 1" style="height: 200px; width: 100%; object-fit: cover;">
-      </div>
-      <div class="rounded shadow-sm overflow-hidden" style="width: 30%;">
-        <img src="interior2.jpg" class="img-fluid" alt="Interior View 2" style="height: 200px; width: 100%; object-fit: cover;">
-      </div>
-      <div class="rounded shadow-sm overflow-hidden" style="width: 30%;">
-        <img src="interior3.jpg" class="img-fluid" alt="Coffee Art" style="height: 200px; width: 100%; object-fit: cover;">
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- Menu Page -->
-  <section class="container my-5" id="menu">
-    <h3 class="text-center">Menu</h3>
-    <p class="text-center">A web version of our printed menu</p>
-    <!-- Replace with actual menu content as needed -->
-    <div class="text-center">Download the full menu PDF: <a href="menu.pdf" download>Click here</a></div>
   </section>
 
-<!-- Order Ahead -->
-<section class="container my-5" id="order">
-  <h3 class="text-center mb-5" style="color: #6B4D2F;">Order Ahead</h3>
-  <div class="row g-4">
-
-    <!-- Hot Latte -->
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card h-100 border-0 shadow-sm text-center item-card" data-bs-toggle="modal" data-bs-target="#itemModal" data-title="Hot Latte" data-img="1.jpg" data-desc="Smooth espresso with steamed milk." data-price="$3.95">
-        <img src="1.jpg" class="card-img-top" alt="Hot Latte" style="height: 200px; object-fit: cover;">
-        <div class="card-body">
-          <h5 class="card-title">Hot Latte</h5>
-          <p class="text-muted mb-1">$3.95</p>
-          <button type="button" class="btn btn-outline-primary add-to-cart">Add to Cart</button>
+  <!-- Featured Items -->
+  <section class="py-5" id="featured" aria-labelledby="featured-heading">
+    <div class="container">
+      <h2 id="featured-heading" class="text-center mb-5" style="color: var(--dark-brown);">Featured Items</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="coffee1.jpg" class="card-img-top" alt="Classic Latte with heart-shaped foam art">
+            <div class="card-body">
+              <h3 class="h5 card-title">Classic Latte</h3>
+              <p class="card-text">Rich espresso blended with steamed milk and velvety foam.</p>
+              <p class="fw-bold text-muted">$3.95</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="coffee2.jpg" class="card-img-top" alt="Freshly baked croissant on wooden board">
+            <div class="card-body">
+              <h3 class="h5 card-title">Fresh Croissant</h3>
+              <p class="card-text">Flaky, buttery croissant baked fresh every morning.</p>
+              <p class="fw-bold text-muted">$2.95</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="coffee3.jpg" class="card-img-top" alt="Breakfast sandwich with egg and cheese">
+            <div class="card-body">
+              <h3 class="h5 card-title">Breakfast Sandwich</h3>
+              <p class="card-text">Egg, cheese, and your choice of meat on a toasted bun.</p>
+              <p class="fw-bold text-muted">$6.95</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Caramel Macchiato -->
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card h-100 border-0 shadow-sm text-center item-card" data-bs-toggle="modal" data-bs-target="#itemModal" data-title="Caramel Macchiato" data-img="2.jpg" data-desc="Espresso with vanilla syrup & caramel drizzle." data-price="$4.45">
-        <img src="2.jpg" class="card-img-top" alt="Caramel Macchiato" style="height: 200px; object-fit: cover;">
-        <div class="card-body">
-          <h5 class="card-title">Caramel Macchiato</h5>
-          <p class="text-muted mb-1">$4.45</p>
-          <button type="button" class="btn btn-outline-primary add-to-cart">Add to Cart</button>
+  <!-- About Section -->
+  <section class="py-5 bg-white" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 id="about-heading" class="mb-4" style="color: var(--dark-brown);">Our Story</h2>
+          <p class="lead">
+            <strong>Roasted & Toasted Lakeside Coffee Bar</strong> is a locally owned coffee shop in beautiful Burlington, Vermont.
+          </p>
+          <p>
+            Since our humble beginnings in 1999, our goal has been to create a relaxing, refreshing environment for coffee lovers. 
+            We offer signature coffee-based beverages and hand-crafted pastries and breakfast sandwiches, all made with locally 
+            sourced ingredients whenever possible.
+          </p>
+          <p>
+            Our lakeside location provides the perfect backdrop for enjoying your favorite brew while taking in views of Lake Champlain.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-6">
+              <img src="interior1.jpg" class="img-fluid rounded shadow-sm" alt="Coffee shop interior with cozy seating" loading="lazy">
+            </div>
+            <div class="col-6">
+              <img src="interior2.jpg" class="img-fluid rounded shadow-sm" alt="Barista preparing coffee" loading="lazy">
+            </div>
+            <div class="col-6 mt-3">
+              <img src="interior3.jpg" class="img-fluid rounded shadow-sm" alt="Latte art close-up" loading="lazy">
+            </div>
+            <div class="col-6 mt-3">
+              <img src="interior2.jpg" class="img-fluid rounded shadow-sm" alt="Outdoor patio seating by the lake" loading="lazy">
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Berry Smoothie -->
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card h-100 border-0 shadow-sm text-center item-card" data-bs-toggle="modal" data-bs-target="#itemModal" data-title="Berry Smoothie" data-img="3.jpg" data-desc="Blend of strawberries, blueberries & banana." data-price="$4.95">
-        <img src="3.jpg" class="card-img-top" alt="Berry Smoothie" style="height: 200px; object-fit: cover;">
-        <div class="card-body">
-          <h5 class="card-title">Berry Smoothie</h5>
-          <p class="text-muted mb-1">$4.95</p>
-          <button type="button" class="btn btn-outline-primary add-to-cart">Add to Cart</button>
+  <!-- Menu Section -->
+  <section class="py-5" id="menu" aria-labelledby="menu-heading">
+    <div class="container">
+      <h2 id="menu-heading" class="text-center mb-5" style="color: var(--dark-brown);">Our Menu</h2>
+      
+      <div class="text-center mb-4">
+        <a href="menu.pdf" class="btn btn-outline-secondary" download>
+          <i class="fas fa-download me-2"></i> Download Full Menu (PDF)
+        </a>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Hot Drinks -->
+        <div class="col-md-6">
+          <div class="menu-section p-4 h-100">
+            <h3 class="h4 mb-3" style="color: var(--dark-brown);">Hot Drinks</h3>
+            <ul class="list-unstyled">
+              <li class="d-flex justify-content-between mb-2">
+                <span>Coffee</span>
+                <span class="text-muted">$3.00</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Espresso</span>
+                <span class="text-muted">$3.50</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Hot Chocolate</span>
+                <span class="text-muted">$3.75</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Tea (Black/Green)</span>
+                <span class="text-muted">$3.00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Specialty Drinks -->
+        <div class="col-md-6">
+          <div class="menu-section p-4 h-100">
+            <h3 class="h4 mb-3" style="color: var(--dark-brown);">Specialty Drinks</h3>
+            <ul class="list-unstyled">
+              <li class="d-flex justify-content-between mb-2">
+                <span>Café Latte</span>
+                <span class="text-muted">$4.50</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Cappuccino</span>
+                <span class="text-muted">$4.50</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Caramel Macchiato</span>
+                <span class="text-muted">$4.95</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Chai Latte</span>
+                <span class="text-muted">$4.75</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Cold Drinks -->
+        <div class="col-md-6">
+          <div class="menu-section p-4 h-100">
+            <h3 class="h4 mb-3" style="color: var(--dark-brown);">Cold Drinks</h3>
+            <ul class="list-unstyled">
+              <li class="d-flex justify-content-between mb-2">
+                <span>Iced Coffee</span>
+                <span class="text-muted">$3.75</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Iced Tea</span>
+                <span class="text-muted">$3.50</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Lemonade</span>
+                <span class="text-muted">$3.75</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Cold Brew</span>
+                <span class="text-muted">$4.25</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Food -->
+        <div class="col-md-6">
+          <div class="menu-section p-4 h-100">
+            <h3 class="h4 mb-3" style="color: var(--dark-brown);">Food</h3>
+            <ul class="list-unstyled">
+              <li class="d-flex justify-content-between mb-2">
+                <span>Fresh Croissant</span>
+                <span class="text-muted">$2.95</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Breakfast Sandwich</span>
+                <span class="text-muted">$6.95</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Avocado Toast</span>
+                <span class="text-muted">$7.50</span>
+              </li>
+              <li class="d-flex justify-content-between mb-2">
+                <span>Yogurt Parfait</span>
+                <span class="text-muted">$5.95</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Toast -->
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999">
-  <div id="cartToast" class="toast align-items-center text-white bg-success border-0" role="alert">
-    <div class="d-flex">
-      <div class="toast-body">
-        Added to cart!
-      </div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <img id="modalImage" src="" class="img-fluid rounded-top" style="height: 250px; object-fit: cover;" alt="">
-      <div class="modal-body text-center">
-        <h5 id="modalTitle" class="modal-title mb-3"></h5>
-        <p id="modalDescription" class="mb-2"></p>
-        <p id="modalPrice" class="text-muted fw-semibold mb-3"></p>
-        <button class="btn btn-outline-primary add-to-cart" data-bs-dismiss="modal">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- JavaScript -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toastEl = document.getElementById('cartToast');
-    const toast = new bootstrap.Toast(toastEl);
-
-    document.querySelectorAll('.add-to-cart').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toast.show();
-      });
-    });
-
-    const modal = document.getElementById('itemModal');
-    document.querySelectorAll('.item-card').forEach(card => {
-      card.addEventListener('click', () => {
-        modal.querySelector('#modalTitle').textContent = card.dataset.title;
-        modal.querySelector('#modalDescription').textContent = card.dataset.desc;
-        modal.querySelector('#modalPrice').textContent = card.dataset.price;
-        modal.querySelector('#modalImage').src = card.dataset.img;
-        modal.querySelector('#modalImage').alt = card.dataset.title;
-      });
-    });
-  });
-</script>
-
-
-
-<section class="container my-5" id="menu">
-  <h3 class="text-center mb-5" style="color: #6B4D2F;">Menu</h3>
-  <a href="menu.pdf" class="btn btn-outline-secondary mt-2 mb-2" download>Download Full Menu (PDF)</a>
-
-
-  <div class="row g-4">
-
-    <!-- Hot Drinks -->
-    <div class="col-12 col-md-6">
-      <div class="p-4 border rounded shadow-sm h-100">
-        <h5 style="color: #6B4D2F;">Hot Drinks: <span class="text-muted">$3.00</span></h5>
-        <ul class="mb-0">
-          <li>Coffee</li>
-          <li>Espresso</li>
-          <li>Hot Chocolate</li>
-          <li>Black Tea</li>
-          <li>Green Tea</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Specialty Hot Drinks -->
-    <div class="col-12 col-md-6">
-      <div class="p-4 border rounded shadow-sm h-100">
-        <h5 style="color: #6B4D2F;">Specialty Hot Drinks: <span class="text-muted">$4.50</span></h5>
-        <ul class="mb-0">
-          <li>Café Latte</li>
-          <li>Cappuccino</li>
-          <li>Café Mocha</li>
-          <li>Caramel Macchiato</li>
-          <li>White Chocolate Mocha</li>
-          <li>Chai</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Frappes -->
-    <div class="col-12 col-md-6">
-      <div class="p-4 border rounded shadow-sm h-100">
-        <h5 style="color: #6B4D2F;">Frappes: <span class="text-muted">$5.00</span></h5>
-        <ul class="mb-0">
-          <li>Coffee</li>
-          <li>Mocha</li>
-          <li>Vanilla Bean</li>
-          <li>Chai</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Smoothies -->
-    <div class="col-12 col-md-6">
-      <div class="p-4 border rounded shadow-sm h-100">
-        <h5 style="color: #6B4D2F;">Smoothies: <span class="text-muted">$6.00</span></h5>
-        <ul class="mb-0">
-          <li>Strawberry</li>
-          <li>Strawberry Banana</li>
-          <li>Pineapple</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Cold Beverages -->
-    <div class="col-12 col-md-6">
-      <div class="p-4 border rounded shadow-sm h-100">
-        <h5 style="color: #6B4D2F;">Cold Beverages: <span class="text-muted">$3.75</span></h5>
-        <ul class="mb-0">
-          <li>Freshly Squeezed Lemonade</li>
-          <li>Iced Tea</li>
-          <li>Sweet Tea</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Freshly Baked -->
-    <div class="col-12 col-md-6">
-      <div class="p-4 border rounded shadow-sm h-100">
-        <h5 style="color: #6B4D2F;">Freshly Baked: <span class="text-muted">$2.50</span></h5>
-        <ul class="mb-0">
-          <li>Bagels</li>
-          <li>Muffins</li>
-          <li>Scones</li>
-          <li>Croissants</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Sandwiches and Wraps -->
-    <div class="col-12">
-      <div class="p-4 border rounded shadow-sm h-100">
-        <h5 style="color: #6B4D2F;">Sandwiches and Wraps: <span class="text-muted">$8.00</span></h5>
-        <ul class="mb-0">
-          <li>Egg and Sausage Bagel Sandwich</li>
-          <li>Ham and Swiss Sandwich</li>
-          <li>Egg BLT</li>
-          <li>Breakfast Burrito</li>
-          <li>Chipotle Chicken Wrap</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-  <!-- Contact Us -->
-  <section class="container my-5" id="contact">
-    <h3 class="text-center">Contact Us</h3>
-    <div class="row">
-      <div class="col-md-6">
-        <ul>
-          <li><strong>Address:</strong> 123 Lakeside St, Burlington, VT</li>
-          <li><strong>Phone:</strong> (802) 123-4567</li>
-          <li><strong>Hours:</strong> Mon–Sun: 7am–4pm</li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name">
+  <!-- Order Ahead Section -->
+  <section class="py-5 bg-white" id="order" aria-labelledby="order-heading">
+    <div class="container">
+      <h2 id="order-heading" class="text-center mb-5" style="color: var(--dark-brown);">Order Ahead</h2>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="1.jpg" class="card-img-top" alt="Hot latte with foam art">
+            <div class="card-body">
+              <h3 class="h5 card-title">Hot Latte</h3>
+              <p class="card-text">Smooth espresso with steamed milk.</p>
+              <p class="fw-bold text-muted">$3.95</p>
+              <button class="btn btn-gold w-100">Add to Order</button>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email">
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="2.jpg" class="card-img-top" alt="Buttery croissant on plate">
+            <div class="card-body">
+              <h3 class="h5 card-title">Butter Croissant</h3>
+              <p class="card-text">Flaky, buttery perfection.</p>
+              <p class="fw-bold text-muted">$2.95</p>
+              <button class="btn btn-gold w-100">Add to Order</button>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="3"></textarea>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img src="3.jpg" class="card-img-top" alt="Breakfast sandwich with egg and cheese">
+            <div class="card-body">
+              <h3 class="h5 card-title">Breakfast Sandwich</h3>
+              <p class="card-text">Egg, cheese and choice of meat.</p>
+              <p class="fw-bold text-muted">$6.95</p>
+              <button class="btn btn-gold w-100">Add to Order</button>
+            </div>
           </div>
-          <button type="submit" class="btn btn-dark">Send Message</button>
-        </form>
-        <div class="mt-3">
-          <i class="bi bi-facebook me-2"></i>
-          <i class="bi bi-instagram me-2"></i>
-          <i class="bi bi-twitter"></i>
+        </div>
+      </div>
+      
+      <div class="text-center mt-5">
+        <a href="#" class="btn btn-dark btn-lg">View Full Order Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-5" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <h2 id="contact-heading" class="text-center mb-5" style="color: var(--dark-brown);">Contact Us</h2>
+      
+      <div class="row">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="h-100 p-4 bg-white rounded shadow-sm">
+            <h3 class="h4 mb-3">Visit Us</h3>
+            <address>
+              <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Lakeside Drive, Burlington, VT 05401</p>
+              <p class="mb-2"><i class="fas fa-phone me-2"></i> (802) 555-1234</p>
+              <p class="mb-4"><i class="fas fa-clock me-2"></i> Daily: 7:00 AM - 4:00 PM</p>
+            </address>
+            
+            <h3 class="h4 mb-3 mt-4">Follow Us</h3>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-dark" aria-label="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+              <a href="#" class="text-dark" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+              <a href="#" class="text-dark" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="h-100 p-4 bg-white rounded shadow-sm">
+            <h3 class="h4 mb-3">Send Us a Message</h3>
+            <form class="contact-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-gold w-100">Send Message</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-white text-center text-lg-start" style="background-color: #4B3621;">
-    <div class="container p-4">
+  <footer class="py-5">
+    <div class="container">
       <div class="row">
-        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Roasted & Toasted</h5>
-          <p>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h2 class="h4 text-white mb-3">Roasted & Toasted</h2>
+          <p class="text-light">
             Your cozy lakeside coffee destination since 1999. Fresh brews, baked goods, and warm vibes.
           </p>
         </div>
-  
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
-          <ul class="list-unstyled mb-0">
-            <li><a href="#home" class="text-white">Home</a></li>
-            <li><a href="#about" class="text-white">About</a></li>
-            <li><a href="#menu" class="text-white">Menu</a></li>
-            <li><a href="#order" class="text-white">Order</a></li>
-            <li><a href="#contact" class="text-white">Contact</a></li>
+        
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h3 class="h4 text-white mb-3">Quick Links</h3>
+          <ul class="list-unstyled footer-links">
+            <li class="mb-2"><a href="#home">Home</a></li>
+            <li class="mb-2"><a href="#menu">Menu</a></li>
+            <li class="mb-2"><a href="#order">Order Ahead</a></li>
+            <li class="mb-2"><a href="#about">Our Story</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-  
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Follow Us</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Instagram</a></li>
-            <li><a href="#" class="text-white">Facebook</a></li>
-            <li><a href="#" class="text-white">Twitter</a></li>
-          </ul>
+        
+        <div class="col-lg-4">
+          <h3 class="h4 text-white mb-3">Newsletter</h3>
+          <p class="text-light mb-3">Sign up for seasonal specials and events!</p>
+          <form class="mb-3">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Your email" aria-label="Your email" required>
+              <button class="btn btn-gold" type="submit">Sign Up</button>
+            </div>
+          </form>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-light" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-light" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-light" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
         </div>
       </div>
-    </div>
-  
-    <div class="text-center p-3" style="background-color: #3E2C1C;">
-      © 2025 Roasted & Toasted. All rights reserved.
+      
+      <hr class="my-4 bg-light">
+      
+      <div class="text-center text-light">
+        <p class="mb-0">&copy; 2023 Roasted & Toasted Coffee Bar. All rights reserved.</p>
+      </div>
     </div>
   </footer>
-  
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Bootstrap JS (Place before </body>) -->
-
-
-<!-- Enable Bootstrap Popovers -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    popoverTriggerList.forEach(function (popoverTriggerEl) {
-      new bootstrap.Popover(popoverTriggerEl, {
-        trigger: 'focus'
+  
+  <!-- Custom JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize tooltips
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+            
+            // Update URL without jumping
+            if (history.pushState) {
+              history.pushState(null, null, targetId);
+            } else {
+              location.hash = targetId;
+            }
+          }
+        });
+      });
+      
+      // Order ahead functionality would go here
+      const orderButtons = document.querySelectorAll('#order .btn-gold');
+      orderButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // In a real implementation, this would add to cart
+          alert('Added to order! This would connect to your ordering system.');
+        });
       });
     });
-  });
-</script>
+  </script>
 </body>
-
 </html>
